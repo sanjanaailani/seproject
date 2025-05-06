@@ -1,0 +1,104 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Object oriented programming vanshi</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+<div class="container-fluid px-0">
+    <div class="row vh-100 g-0">
+        <!-- Sidebar -->
+        <nav class="col-md-3 d-flex flex-column p-4" style = "background-color: #c4c5c5;">
+            <div class="mb-4 text-center">
+                <img src="{% static 'myapp/logo.png' %}" alt="University logo" class="mb-3" width="100" height="100"/>
+            </div>
+            <h4 class="fw-bold mb-4">Table of Contents</h4>
+            <ul class="list-unstyled">
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">1. What is Probability?</a></li>
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">2. Key Terms</a></li>
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">3. Conditional Probability</a></li>
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">4. Where Do We Use It in NLP?</a></li>
+            </ul>
+            <div class="mt-auto text-center">
+                <small class="text-muted d-block">© 2024 University</small>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <!-- Search Bar -->
+            <div class="bg-primary bg-opacity-25 p-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <input class="form-control me-2" style="width: 250px;" placeholder="Search..." type="text"/>
+                    <button class="btn btn-dark rounded-circle"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-dark text-white d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="ms-2 fs-5">Profile</span>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+<div class="p-5">
+  <h1 class="fw-bold text-success">🎲 Probability for NLP</h1>
+  <p class="lead">Probability is all about making smart guesses! In NLP, it helps systems predict what’s likely to come next or determine the meaning behind what’s already been said.</p>
+
+  <!-- Section 1: What is Probability? -->
+  <h3 class="text-danger mt-5">1. What is Probability?</h3>
+  <p>Probability measures the chance of something happening. It ranges from 0 (won’t happen) to 1 (guaranteed to happen).</p>
+  <p><strong>Formula:</strong> P(Event) = Number of favorable outcomes / Total possible outcomes</p>
+  <p>For example: If there are 2 positive reviews out of 5 total reviews, the probability that a randomly selected review is positive is:</p>
+  <pre><code>P(positive) = 2 / 5 = 0.4</code></pre>
+
+  <!-- Section 2: Key Terms -->
+  <h3 class="text-danger mt-5">2. Key Terms in Probability</h3>
+  <ul>
+    <li><strong>Experiment:</strong> A repeatable process with outcomes (e.g., picking a word from a sentence)</li>
+    <li><strong>Outcome:</strong> A single possible result (e.g., selecting the word "AI")</li>
+    <li><strong>Event:</strong> One or more outcomes (e.g., picking a word longer than 3 characters)</li>
+    <li><strong>Sample Space:</strong> The set of all possible outcomes (e.g., all words in a corpus)</li>
+    <li><strong>Random Variable:</strong> A variable whose outcome depends on chance (e.g., POS tag of a word)</li>
+  </ul>
+
+  <!-- Section 3: Conditional Probability -->
+  <h3 class="text-danger mt-5">3. Conditional Probability</h3>
+  <p>Conditional probability measures the likelihood of an event happening <em>given</em> that another event has occurred.</p>
+  <pre><code>P(A | B) = Probability of A happening given B has already happened</code></pre>
+  <p>Example in NLP: What is the chance the word “cold” appears after “catch”?</p>
+  <pre><code>P("cold" | "catch") = Count("catch cold") / Count("catch")</code></pre>
+  <p>This is used in language models to predict the next word!</p>
+
+  <!-- Section 4: Where Do We Use It in NLP? -->
+  <h3 class="text-danger mt-5">4. Applications of Probability in NLP</h3>
+  <ul>
+    <li><strong>Spam Detection:</strong> Using probability to classify emails as spam or not</li>
+    <li><strong>Autocomplete & Autocorrect:</strong> Predicting likely next words or correcting misspelled ones</li>
+    <li><strong>Speech Recognition:</strong> Choosing the most probable interpretation of a spoken sentence</li>
+    <li><strong>Machine Translation:</strong> Picking the most probable translation of a sentence</li>
+    <li><strong>Language Modeling:</strong> Calculating the probability of word sequences (e.g., in GPT and BERT)</li>
+  </ul>
+
+  <!-- Bonus Explanation -->
+  <div class="alert alert-info mt-4">
+    <strong>Fun Fact:</strong> Many machine learning models (like Naive Bayes) are built entirely around probability math!
+  </div>
+
+  <!-- Mini Challenge -->
+  <div class="alert alert-success mt-5">
+    <h5>🌟 Mini Challenge:</h5>
+    <p>Given a sentence <code>"I love NLP because NLP is amazing"</code>, write a function to calculate the probability of each word appearing.</p>
+    <p><strong>Hint:</strong> Use word counts and total word count.</p>
+  </div>
+</div>
+<!-- End of content grid -->
+</div>
+</div>
+</body>
+</html>

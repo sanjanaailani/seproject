@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokenization</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="h-100 m-0">
+
+<div class="container-fluid h-100 px-0">
+    <div class="row h-100 g-0">
+        <!-- Sidebar -->
+        <nav class="col-md-3  p-4 d-flex flex-column" style="background-color:#d3d3d4 ;">
+            <div class="text-center mb-3">
+                <img src="{% static 'myapp/logo.png' %}" alt="University logo" width="100" height="100"/>
+                <h2 class="h5 fw-bold">PREREQUISITES</h2>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Python</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Probability</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Forward and Backpropagation</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Markov Model, HMM</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Introduction to Neural Networks</a></li>
+            </ul>
+            <div class="mt-auto text-center">
+                <p class="text-muted small">© 2024 University</p>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 d-flex flex-column p-0">
+            <!-- Search Bar -->
+            <div class="bg-primary bg-opacity-25 p-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex">
+                    <input type="text" class="form-control me-2" placeholder="Search...">
+                    <button class="btn btn-dark"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="bg-dark text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="ms-2">Profile</span>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="p-4">
+                <h1 class="fw-bold">Tokenization</h1>
+                <h2 class="h2 mb-4">1. What is a Tokenization?</h2>
+                <p>Tokenization is the first step in NLP—breaking text into smaller pieces called tokens.</p>
+                <p>These tokens can be:</p>
+                <ul>
+                    <li>Words</li>
+                    <li>Characters</li>
+                    <li>Subwords (like BPE or WordPiece)</li>
+                    <li>Or even emoji's</li>
+                </ul><br>
+                <p class="fw-bold">Example:</p>
+                <p>"I'm learning NLP!" → ["I", "'m", "learning", "NLP", "!"]</p><br>
+                <h2 class="h2 mb-4">2.Why Do We Tokenize?</h2>
+                <p>Because computers don’t speak text—they speak numbers.</p>
+                <p>Tokenization helps us:</p>
+                <ul>
+                    <li>Clean and organize text</li>
+                    <li>Prepare it for ML models</li>
+                    <li>Convert words into embeddings</li>
+                    <li>Handle unknown or rare words</li>
+                </ul><br>
+                <h2 class="h2 mb-4">3.Tokenization Techniques</h2>
+                <div class = "container-fluid text-center">
+                    <div class = "row ">
+                        <div class = "col border fw-bold">
+                            Method
+                        </div>
+                        <div class="col border fw-bold">
+                            What it Does
+                        </div>
+                        <div class="col border fw-bold">
+                            When to Use
+                        </div>
+                    </div>
+                    <div class = "row ">
+                        <div class = "col border">
+                            Whitespace
+                        </div>
+                        <div class="col border">
+                            Splits text on spaces
+                        </div>
+                        <div class="col border">
+                            Simple, fast
+                        </div>
+                    </div>
+                    <div class = "row ">
+                        <div class = "col border">
+                            Word Tokenizer
+                        </div>
+                        <div class="col border">
+                            Keeps punctuation separate
+                        </div>
+                        <div class="col border">
+                            Most NLP tasks
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            Character Tokenizer
+                        </div>
+                        <div class="col border">
+                            Each char is a token
+                        </div>
+                        <div class="col border">
+                            When spelling matters
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            Subword Tokenizer
+                        </div>
+                        <div class="col border">
+                            Breaks rare words into known subwords
+                        </div>
+                        <div class="col border">
+                            Great for deep learning models
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2 class="h2 mb-4">4.Subword Tokenization Deep Dive</h2>
+                <p>Welcome to the big leagues: BPE and WordPiece</p>
+                <h4 class="fw-bold">Byte Pair Encoding (BPE):</h4>
+                <p>Example:["un", "happiness"]</p>
+                <ul type="none">
+                    <li>→If happi and ness are frequent, they get merged.</li>
+                </ul>
+                <ul>
+                    <li>Learns frequent pairs like:</li>
+                    <ul type="circle">
+                        <li>h + a = ha</li>
+                        <li>ha + p = hap</li>
+                        <li>hap + p = happ</li>
+                    </ul>
+                    <li>Used in models like GPT, OpenAI CLIP</li>
+                </ul>
+                <h4 class="fw-bold">WordPiece:</h4>
+                <p>Example:
+                    "undeniably" → ["un", "den", "i", "ably"]</p>
+                    <ul>
+                        <li>Keeps known words whole</li>
+                        <li>Breaks unknown ones into parts</li>
+                    </ul>
+                    <p>Used in:</p>
+                    <ul>
+                        <li>BERT</li>
+                        <li>ALBERT</li>
+                        <li>DistilBERT</li>
+                    </ul>
+                    <div class = "container-fluid text-center">
+                        <div class = "row ">
+                            <div class = "col border fw-bold">
+                                Feature
+                            </div>
+                            <div class="col border fw-bold">
+                                BPE
+                            </div>
+                            <div class="col border fw-bold">
+                                WordPiece
+                            </div>
+                        </div>
+                        <div class = "row ">
+                            <div class = "col border">
+                                Based on
+                            </div>
+                            <div class="col border">
+                                Frequency of pairs
+                            </div>
+                            <div class="col border">
+                                Probabilistic models
+                            </div>
+                        </div>
+                        <div class = "row ">
+                            <div class = "col border">
+                                Handles OOV
+                            </div>
+                            <div class="col border">
+                                Yes
+                            </div>
+                            <div class="col border">
+                                Yes
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col border">
+                                Used in
+                            </div>
+                            <div class="col border">
+                                GPT
+                            </div>
+                            <div class="col border">
+                                BERT
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h2 class="h2 mb-4">5.Python Demo</h2>
+                    <p>from nltk.tokenize import word_tokenize<br>sentence = "Let’s tokenize NLP with Python!"<br>tokens = word_tokenize(sentence)<br>print(tokens)</p><br>
+                    <h2 class="h2 mb-4">6.Let’s Try One!</h2>
+                    <div class="try-box">
+                        <h4>Break This Sentence</h3>
+                        <p>"BERT loves subwords like tokens."</p>
+                        <p>Guess how it's tokenized!</p>
+                      </div>
+                      <h2 class="h2 mb-4">7.Quick Quiz Time</h2>
+                      <div class="quiz-box">
+                        <h3>Pop Quiz!</h3>
+                        <p>Which tokenizer is most likely to break “supercalifragilistic” into smaller known parts?</p>
+                        <ul>
+                          <li>A. Word Tokenizer</li>
+                          <li>B. Character Tokenizer</li>
+                          <li>C. WordPiece</li>
+                          <li>D. Whitespace Tokenizer</li>
+                        </ul>
+                        <p><strong>Answer:</strong> C. WordPiece</p>
+                      </div>
+                      <h2 class="h2 mb-4">8.Tokenization Checklist</h2>
+                      <ul>
+                        <li>Know what tokenization is</li>
+                        <li>Tried basic tokenization in Python</li>
+                        <li>Can explain BPE and WordPiece</li>
+                        <li>Understand why subwords are awesome</li>
+                      </ul>
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="h-100 m-0">
+
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <!-- Sidebar -->
+        <nav class="col-md-3 bg-light p-4 d-flex flex-column">
+            <div class="text-center mb-3">
+                <img src="{% static 'myapp/logo.png' %}" alt="University logo" width="100" height="100"/>
+                <h2 class="h5 fw-bold">PREREQUISITES</h2>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="/python" class="nav-link text-primary">Python</a></li>
+                <li class="nav-item"><a href="/probability" class="nav-link text-primary">Probability</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Forward and Backpropagation</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Markov Model, HMM</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Introduction to Neural Networks</a></li>
+            </ul>
+            <div class="mt-auto text-center">
+                <p class="text-muted small">© 2024 University</p>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 d-flex flex-column p-0">
+            <!-- Search Bar -->
+            <div class="bg-info text-white p-3 d-flex justify-content-between align-items-center">
+                <div class="d-flex">
+                    <input type="text" class="form-control me-2" placeholder="Search...">
+                    <button class="btn btn-dark"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="bg-dark text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="ms-2">Profile</span>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="p-4">
+                <h1 class="fw-bold">Object Oriented Programming</h1>
+                <h2 class="h2 mb-4">Classes, Objects, Methods</h2>
+                <p>Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes to structure and organize code. Java is an object-oriented language, and understanding classes, objects, and methods is fundamental to mastering Java. Let’s break it down step by step in a beginner-friendly way.</p><br>
+                <h3 class="text-danger">1. What is a Class?</h3>
+                <p>A class is like a blueprint or a template for creating objects. It defines the properties (attributes) and behaviors (methods) that the objects created from the class will have.</p>
+                <h4 class="fw-bold">Key Points About Classes:</h4>
+                <ol>
+                    <li>Blueprint: A class is a logical entity that describes what an object will look like and what it can do.</li>
+                    <li>No Memory Usage: A class itself does not occupy memory. Memory is allocated only when an object is created from the class.</li>
+                    <li>Components of a class:
+                        <ul>
+                            <li>Fields (Variables): These are the attributes or properties of the class. For example, a Dog class might have fields like breed, age, and color.</li>
+                            <li>Methods: These are the actions or behaviors that the class can perform. For example, a Dog class might have a method called bark().</li>
+                            <li>Constructors: These are special methods used to initialize objects when they are created.</li>
+                            <li>Blocks: These are used to initialize fields or perform some setup tasks.</li>
+                            <li>Nested Classes: These are classes defined inside another class.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3 class="h2 mb-4">Real-Life Example</h3>
+                <p>Think of a class as a recipe for baking a cake. The recipe (class) describes the ingredients (fields) and the steps (methods) needed to bake the cake (object). The recipe itself is not a cake, but you can use it to make as many cakes as you want.</p>
+                <h3 class="text-danger">2. What is an object?</h3>
+                <p>An object is an instance of a class. It is a real-world entity that has state (attributes) and behavior (methods).</p>
+                <h4 class="fw-bold">Key Points About Objects:</h4>
+                <ol>
+                    <li>Instance of a Class: An object is created from a class. For example, if Dog is a class, then myDog can be an object of the Dog class.</li>
+                    <li>Memory Allocation: Objects occupy memory because they store actual data.</li>
+                    <li>State and Behavior:
+                        <ul>
+                            <li>State: The data stored in the object’s fields. For example, a Dog object might have a state like breed = "Labrador", age = 3, and color = "Golden".</li>
+                            <li>Behavior: The actions the object can perform using its methods. For example, a Dog object can perform the action bark().</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h4 class="h2">Real-Life Example:</h4>
+                <p>Think of a class as a recipe for baking a cake. The recipe (class) describes the ingredients (fields) and the steps (methods) needed to bake the cake (object). The recipe itself is not a cake, but you can use it to make as many cakes as you want.</p>
+                <img src="{% static 'myapp/img.jpeg' %}" class="d-block mx-auto" width="300" height="300"/>
+                <h3 class="text-danger">3. What is a Method?</h3>
+                <p>A method is a block of code that performs a specific task. It defines the behavior of an object.</p>
+                <h4 class="fw-bold">Key Points About Methods:</h4>
+                <ol>
+                    <li>Actions: Methods are used to perform actions or operations. For example, a Dog class might have a method called bark() that prints "Woof! Woof!".</li>
+                    <li>Parameters: Methods can take inputs called parameters. For example, a Calculator class might have a method called add(int a, int b) that takes two numbers as input.</li>
+                    <li>Return Value: Methods can return a value after performing their task. For example, the add(int a, int b) method might return the sum of a and b.</li>
+                    <li>No Return Value: If a method does not return any value, its return type is void.</li>
+                </ol>
+                <h4 class="h2">Real-Life Example:</h4>
+                <p>Think of a method as a function or action that an object can perform. For example, a Car object might have a method called startEngine() that starts the car’s engine.</p>
+                <h4 class="h2 text-warning">Tips:</h4>
+                <ol>
+                    <li>Naming Conventions:
+                        <ul>
+                            <li>Class names should start with an uppercase letter (e.g., Dog, Car).</li>
+                            <li>Method names should start with a lowercase letter (e.g., bark(), startEngine()).</li>
+                        </ul>
+                    </li>
+                    <li>Encapsulation: Use private fields and provide public methods (getters/setters) to access them. This ensures data security.</li>
+                    <li>Keep Methods Small: Each method should perform a single task. This makes your code easier to read and maintain.</li>
+                    <li>Use Constructors: Always initialize objects properly using constructors.</li>
+                </ol>
+                <h4 class="h2 text-success">Real-Life Analogy:</h4>
+                <ul>
+                    <li>Class: A blueprint for building a house.</li>
+                    <li>Object: The actual house built using the blueprint.</li>
+                    <li>Method: The actions you can perform in the house, like turning on the lights or opening the door.</li>
+                    <li>Constructor: The construction process that builds the house according to the blueprint.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</div>
+
+
+
+</body>
+</html>

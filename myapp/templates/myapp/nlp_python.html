@@ -1,0 +1,141 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>nlp python</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+<div class="container-fluid px-0">
+    <div class="row vh-100 g-0">
+        <!-- Sidebar -->
+        <nav class="col-md-3 d-flex flex-column p-4" style = "background-color: #c4c5c5;">
+            <div class="mb-4 text-center">
+                <img src="{% static 'myapp/logo.png' %}" alt="University logo" class="mb-3" width="100" height="100"/>
+            </div>
+            <h4 class="fw-bold mb-4">Table of Contents</h4>
+            <ul class="list-unstyled">
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">1. Variables & Data Types</a></li>
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">2. Strings & Lists</a></li>
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">3. Loops & Conditions</a></li>
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">4. Functions</a></li>
+                <li class="mb-2"><a href="#" class="text-primary text-decoration-none">5. Python Libraries for NLP</a></li>
+
+            </ul>
+            <div class="mt-auto text-center">
+                <small class="text-muted d-block">© 2024 University</small>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <!-- Search Bar -->
+            <div class="bg-primary bg-opacity-25 p-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <input class="form-control me-2" style="width: 250px;" placeholder="Search..." type="text"/>
+                    <button class="btn btn-dark rounded-circle"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-dark text-white d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="ms-2 fs-5">Profile</span>
+                </div>
+            </div>
+
+            <!-- Continuing from layout.html -->
+<div class="p-5">
+  <h1 class="fw-bold text-primary">🐍 Python for NLP</h1>
+  <p class="lead">Python is beginner-friendly, yet powerful enough to build the most advanced NLP models.</p>
+
+  <!-- SECTION 1: VARIABLES & DATA TYPES -->
+  <h3 class="text-danger mt-5">1. Variables & Data Types</h3>
+  <p>A <strong>variable</strong> is like a labeled box to store information in your program.</p>
+  <pre><code># Example variables
+text = "Natural Language Processing"
+number = 10
+is_fun = True
+height = 5.8
+items = ["NLP", "ML", "AI"]
+user = {"name": "Ava", "age": 20}</code></pre>
+  <ul>
+    <li><code>int</code>: whole numbers like <code>3</code></li>
+    <li><code>float</code>: decimal numbers like <code>3.14</code></li>
+    <li><code>str</code>: text values like <code>"hello"</code></li>
+    <li><code>bool</code>: true/false values</li>
+    <li><code>list</code>: group of items</li>
+    <li><code>dict</code>: data in key-value pairs</li>
+  </ul>
+
+  <!-- SECTION 2: STRINGS & LISTS -->
+  <h3 class="text-danger mt-5">2. Strings & Lists</h3>
+  <p>Strings are sequences of characters. Lists are sequences of anything!</p>
+  <pre><code># String methods
+sentence = "I love NLP"
+print(sentence.upper())  # I LOVE NLP
+print(sentence.split())  # ['I', 'love', 'NLP']
+
+# List operations
+apps = ["chatbots", "translators", "summarizers"]
+apps.append("voice assistants")
+print(apps[0])  # chatbots</code></pre>
+
+  <!-- SECTION 3: LOOPS & CONDITIONS -->
+  <h3 class="text-danger mt-5">3. Loops & Conditions</h3>
+  <p>Use <code>if</code>, <code>else</code>, <code>for</code> and <code>while</code> to make decisions and repeat things.</p>
+  <pre><code>words = ["token", "vector", "parse"]
+for w in words:
+    if len(w) > 5:
+        print(w)</code></pre>
+  <pre><code># while loop example
+count = 0
+while count < 3:
+    print("Processing...")
+    count += 1</code></pre>
+
+  <!-- SECTION 4: FUNCTIONS -->
+  <h3 class="text-danger mt-5">4. Functions</h3>
+  <p>Functions are reusable blocks of code.</p>
+  <pre><code>def clean_text(text):
+    return text.lower().replace(".", "").strip()
+
+print(clean_text(" NLP is FUN. "))  # nlp is fun</code></pre>
+
+  <!-- SECTION 5: LIBRARIES FOR NLP -->
+  <h3 class="text-danger mt-5">5. Libraries for NLP</h3>
+  <p>Libraries are like toolkits. They give you pre-built code for common tasks.</p>
+  <pre><code># Using nltk to tokenize
+import nltk
+nltk.download("punkt")
+from nltk.tokenize import word_tokenize
+
+sentence = "NLP is cool!"
+print(word_tokenize(sentence))</code></pre>
+  <p><strong>Also explore:</strong></p>
+  <ul>
+    <li><code>spacy</code>: for fast NLP pipelines</li>
+    <li><code>transformers</code>: for large language models</li>
+  </ul>
+  <pre><code># To install a library:
+# pip install spacy</code></pre>
+
+  <div class="alert alert-info mt-4">
+    <strong>Tip:</strong> Use <a href="https://colab.research.google.com" target="_blank">Google Colab</a> or <a href="https://replit.com" target="_blank">Replit</a> to run Python code without installing anything.
+  </div>
+
+  <!-- MINI CHALLENGE -->
+  <div class="alert alert-success mt-5">
+    <h5>🌟 Mini Challenge:</h5>
+    <p>Create a function <code>count_words(text)</code> that returns how many words are in a sentence.</p>
+  </div>
+
+</div>
+<!-- End of content grid -->
+</div>
+</div>
+</body>
+</html>

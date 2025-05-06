@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="h-100 m-0">
+
+<div class="container-fluid h-100 px-0">
+    <div class="row h-100 g-0">
+        <!-- Sidebar -->
+        <nav class="col-md-3  p-4 d-flex flex-column" style="background-color:#d3d3d4 ;">
+            <div class="text-center mb-3">
+                <img src="{% static 'myapp/logo.png' %}" alt="University logo" width="100" height="100"/>
+                <h2 class="h5 fw-bold">PREREQUISITES</h2>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="/python" class="nav-link text-primary">Python</a></li>
+                <li class="nav-item"><a href="/probability" class="nav-link text-primary">Probability</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Forward and Backpropagation</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Markov Model, HMM</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-primary">Introduction to Neural Networks</a></li>
+            </ul>
+            <div class="mt-auto text-center">
+                <p class="text-muted small">© 2024 University</p>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 d-flex flex-column p-0">
+            <!-- Search Bar -->
+            <div class="bg-primary bg-opacity-25 p-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex">
+                    <input type="text" class="form-control me-2" placeholder="Search...">
+                    <button class="btn btn-dark"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="bg-dark text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="ms-2">Profile</span>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="p-4">
+                <h1 class="fw-bold">Regular Expressions(Regex)</h1>
+                <h2 class="h2 mb-4">1. Section Header</h2>
+                <section class="module-header">
+                    <h3>Regular Expressions: Find the Needle in the Text Haystack</h3>
+                    <p class="tagline">Regex = pattern hunting + logic + superpowers</p>
+                  </section>
+                <br>
+                <h2 class="h2 mb-4">2.What Are Regular Expressions?</h2>
+                <p>Think of regex as:</p>
+                <ul>
+                    <li>A metal detector for patterns.</li>
+                    <li>A search engine inside your code.</li>
+                    <li>A way to say “find all words ending in ing” — without writing 100 if conditions.</li>
+                </ul><br>
+                <h2 class="h2 mb-4">3. Meet the Symbols: Regex Essentials</h2>
+                <div class = "container-fluid text-center">
+                    <div class = "row ">
+                        <div class = "col border fw-bold">
+                            Symbol
+                        </div>
+                        <div class="col border fw-bold">
+                            Meaning
+                        </div>
+                        <div class="col border fw-bold">
+                            Example
+                        </div>
+                        <div class = "col border fw-bold">
+                            Matches
+                        </div>
+                    </div>
+                    <div class = "row ">
+                        <div class = "col border">
+                            .
+                        </div>
+                        <div class="col border">
+                            Any character
+                        </div>
+                        <div class="col border">
+                            a.c
+                        </div>
+                        <div class="col border">
+                            abc, a2c, a_c
+                        </div>
+                    </div>
+                    <div class = "row ">
+                        <div class = "col border">
+                            *
+                        </div>
+                        <div class="col border">
+                            0 or more times
+                        </div>
+                        <div class="col border">
+                            lo*l
+                        </div>
+                        <div class="col border">
+                            ll, lol, loool
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            +
+                        </div>
+                        <div class="col border">
+                            1 or more times
+                        </div>
+                        <div class="col border">
+                            go+gle
+                        </div>
+                        <div class="col border">
+                            gogle, google, gooogle
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            ?
+                        </div>
+                        <div class="col border">
+                            0 or 1 time
+                        </div>
+                        <div class="col border">
+                            colou?r
+                        </div>
+                        <div class="col border">
+                            color, colour
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            []
+                        </div>
+                        <div class="col border">
+                            One character from set
+                        </div>
+                        <div class="col border">
+                            [aeiou]
+                        </div>
+                        <div class="col border">
+                            a, e, i, o, u
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            [^]
+                        </div>
+                        <div class="col border">
+                            Not in set
+                        </div>
+                        <div class="col border">
+                            [^0-9]
+                        </div>
+                        <div class="col border">
+                            any non digit 
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            {n}
+                        </div>
+                        <div class="col border">
+                            Exactly n times
+                        </div>
+                        <div class="col border">
+                            a{3}
+                        </div>
+                        <div class="col border">
+                            aaa
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            ^
+                        </div>
+                        <div class="col border">
+                            Start of string
+                        </div>
+                        <div class="col border">
+                            ^Hi
+                        </div>
+                        <div class="col border">
+                            Hi there
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            $
+                        </div>
+                        <div class="col border">
+                            End of string
+                        </div>
+                        <div class="col border">
+                            bye$
+                        </div>
+                        <div class="col border">
+                            Say bye
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            \d
+                        </div>
+                        <div class="col border">
+                            Digit
+                        </div>
+                        <div class="col border">
+                            \d\d\d
+                        </div>
+                        <div class="col border">
+                            123
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            \w
+                        </div>
+                        <div class="col border">
+                            Word character
+                        </div>
+                        <div class="col border">
+                            \w+
+                        </div>
+                        <div class="col border">
+                            hello, world123
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "col border">
+                            \s
+                        </div>
+                        <div class="col border">
+                            Whitespace
+                        </div>
+                        <div class="col border">
+                            \s+
+                        </div>
+                        <div class="col border">
+                            space, tab
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2 class="h2 mb-4">4. Visual Example: Email Hunter</h2>
+                <p>import re
+                    text = "My email is jane.doe@gmail.com and hers is abc_123@yahoo.co.in"<br>
+                    emails = re.findall(r'\b[\w.-]+@[\w.-]+\.\w+\b', text)<br>
+                    print(emails)</p>
+                    <p href="jane.doe@gmail.com ,abc_123@yahoo.co.in">
+                        Output:
+                        "[<a href="href="jane.doe@gmail.com ">'jane.doe@gmail.com'</a>, <a href="href="abc_123@yahoo.co.in ">'abc_123@yahoo.co.in'</a>]"</p>
+                <p>Why it works:</p>
+                <ul>
+                    <li>The regex [\w.-]+@[\w.-]+\.\w+ means:</li>
+                </ul>
+                <p>Match one or more word/dot/dash → @ → one or more word/dot → dot → word characters</p>
+
+                <h2 class="h2 mb-4">5.Python Demo</h2>
+                <div class="quiz-box">
+                    <h3>Quick Quiz</h3>
+                    <p>Which regex will match all words that end with 'ing'?</p>
+                    <ul>
+                      <li>A. <code>\bing\b</code></li>
+                      <li>B. <code>\w+ing</code></li>
+                      <li>C. <code>ing\w+</code></li>
+                      <li>D. <code>[ing]</code></li>
+                    </ul>
+                    <p><strong>Answer:</strong> B. <code>\w+ing</code></p>
+                  </div>
+                    <h2 class="h2 mb-4">6.Try it Yourself!</h2>
+                    <div class="try-box">
+                        <h4>Try It Yourself</h4>
+                        <p>Write a regex to extract hashtags from this tweet:</p>
+                        <blockquote>"Loving the weather today! #sunny #weekend #happy"</blockquote>
+                        <p>Hint: Hashtags start with <code>#</code> and are followed by letters/numbers.</p>
+                      </div>
+                      <h2 class="h2 mb-4">7.Checklist Before You Move On</h2>
+                      <div class="quiz-box">
+                        <ul>
+                          <li>Know what regex is used for</li>
+                          <li>Can match simple patterns using +, *, []</li>
+                          <li>Can extract phone numbers, emails, hashtags                        </li>
+                          <li>Tried one regex in Python or online tool (like regex101)</li>
+                        </ul>
+                      </div>
+            </div>
+        </main>
+    </div>
+</div>

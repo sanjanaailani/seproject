@@ -1,4 +1,6 @@
-#  CoreLink – Centralized Learning Platform for Engineering Students 🎓
+#  CoreLink – Centralized Learning Platform for Engineering Students 
+![Uploading Screenshot 2025-05-08 151820.png…]()
+
 
 CoreLink is a self-contained, semester-wise academic learning platform that helps engineering students **revisit fundamental concepts**, access **organized learning material**, and **bridge gaps between prerequisites and advanced topics**. Designed with accessibility and modularity in mind, the platform combines clean UI with syllabus-aligned resources.
 

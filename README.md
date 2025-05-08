@@ -7,9 +7,11 @@ CoreLink is a self-contained, semester-wise academic learning platform that help
 ## 📚 Documents Attached
 
 - ✅ [DEMO VIDEO LINK]
-- ✅ [Problem Statement and PPT]
+- ✅ [Problem Statement and PPT] 
 - ✅ [Software Requirements Specification (SRS)]
-- ✅ [Software Design Document (SDD)]
+- ✅ [Software Design Document (SDD)] (https://drive.google.com/file/d/1SkAaBquKjk1nnX6HxofV5VxrDTuMkJ60/view)
+- ✅ [Test Document]
+  
 
 > These documents include system architecture, detailed use cases, UML diagrams, and design constraints.
 

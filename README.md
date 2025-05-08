@@ -4,7 +4,7 @@ CoreLink is a self-contained, semester-wise academic learning platform that help
 
 ---
 
-## 🔴Documents Attached 
+## ➡️Documents Attached 
 
 - ⭐ Demo Video Link-  (https://drive.google.com/file/d/1KzRO5Iw2ehwRMVShpOehGxU3Ui0xWDWf/view?usp=sharing)
   
@@ -19,7 +19,7 @@ CoreLink is a self-contained, semester-wise academic learning platform that help
 
 > These documents include demosystem architecture, detailed use cases, UML diagrams, and design constraints.
 
-## 🖥️Tech Stack 
+## ➡️Tech Stack 
 
 | Layer       | Technology             |
 |-------------|-------------------------|
@@ -29,7 +29,7 @@ CoreLink is a self-contained, semester-wise academic learning platform that help
 | Architecture| MVC (Model-View-Controller) |
 
 ---
-## 👉Features Implemented 
+## ➡️Features Implemented 
 
 - Semester-wise course dashboard   
 - Prerequisite-based content structure  

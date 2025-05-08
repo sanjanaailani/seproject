@@ -1,5 +1,4 @@
 #  CoreLink – Centralized Learning Platform for Engineering Students 
-![logo](https://github.com/user-attachments/assets/2576374d-7a1f-473f-b8cc-fbbb500a0a0d)
 
 CoreLink is a self-contained, semester-wise academic learning platform that helps engineering students **revisit fundamental concepts**, access **organized learning material**, and **bridge gaps between prerequisites and advanced topics**. Designed with accessibility and modularity in mind, the platform combines clean UI with syllabus-aligned resources.
 
@@ -37,6 +36,8 @@ CoreLink is a self-contained, semester-wise academic learning platform that help
 - Admin-controlled user registration  
 - Manual login validation (via Django Auth)  
 - Responsive UI
+
+![Screenshot 2025-05-08 151820](https://github.com/user-attachments/assets/c3f4e3af-1d09-41ae-b5fe-beb15118ac43)
 
 
 
